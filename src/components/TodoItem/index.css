@@ -5,6 +5,9 @@
   display: flex;
   justify-content: space-between;
   padding-right: 30px;
+  background-color: antiquewhite;
+  margin: 10px;
+  border-radius: 10px;
 }
 /* .inner-container {
   background-color: white;
