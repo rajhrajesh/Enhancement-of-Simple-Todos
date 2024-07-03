@@ -1,4 +1,4 @@
-import {Component} from 'react'
+import React, {Component} from 'react'
 import TodoItem from '../TodoItem'
 import './index.css'
 
@@ -24,6 +24,7 @@ class SimpleTodos extends Component {
     ],
     newTodoTitle: '',
     newTodoCount: 1,
+    selectedCategory: 'Personal', // Example: Adding a selectedCategory state for dropdown
   }
 
   handleAddTodo = () => {
@@ -59,7 +60,7 @@ class SimpleTodos extends Component {
   }
 
   render() {
-    const {todosList, newTodoTitle, newTodoCount} = this.state
+    const {todosList, newTodoTitle, newTodoCount, selectedCategory} = this.state
     return (
       <div className="container">
         <div className="inner-container">
@@ -79,6 +80,16 @@ class SimpleTodos extends Component {
               onChange={this.handleChange}
               placeholder="Enter number of todos"
             />
+            <select
+              name="selectedCategory"
+              value={selectedCategory}
+              onChange={this.handleChange}
+            >
+              <option value="Personal">Personal</option>
+              <option value="Work">Work</option>
+              <option value="Shopping">Shopping</option>
+              <option value="Others">Others</option>
+            </select>
             <button onClick={this.handleAddTodo} type="button">
               Add
             </button>

@@ -1,13 +1,11 @@
-/* Write your CSS here */
-/* Write your CSS here */
 .container {
   background-color: #ffc2a0;
-  /* height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
+
 .inner-container {
   background-color: white;
   margin: 10px;
@@ -17,30 +15,75 @@
   align-items: center;
   width: 98%;
   border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 @media screen and (min-width: 768px) {
   .inner-container {
     padding: 48px;
-    margin-top: 96px;
-    margin-bottom: 96px;
+    margin: 96px auto;
   }
 }
+
 .heading {
-  font-size: 30px;
-  font-family: 'Roboto';
+  font:
+    700 30px/1.2 'Roboto',
+    sans-serif;
   color: #ff8542;
   text-align: center;
-  font-weight: 700;
-  margin-top: 12px;
-  margin-bottom: 16px;
+  margin: 12px 0 16px;
 }
+
 @media screen and (min-width: 768px) {
   .heading {
     font-size: 48px;
-    margin-top: 32px;
-    margin-bottom: 48px;
+    margin: 32px 0 48px;
   }
 }
-.todos-list {
-  padding-left: 0px;
+
+.add-todo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.add-todo input,
+.add-todo select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-size: 16px;
+  flex: 1;
+}
+
+.add-todo input:focus,
+.add-todo select:focus {
+  outline: none;
+  border-color: #ff8542;
+  box-shadow: 0 0 0 2px rgba(255, 133, 66, 0.5);
+}
+
+.add-todo button {
+  background-color: #ff8542;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-todo button:hover {
+  background-color: #ff6b1c;
+}
+
+.add-todo input,
+.add-todo select,
+.add-todo button {
+  margin-bottom: 10px;
+}
+.todos-list{
+  width: 60%;
+  
 }

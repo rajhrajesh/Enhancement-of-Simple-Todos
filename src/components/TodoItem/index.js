@@ -1,4 +1,4 @@
-import {Component} from 'react'
+import React, {Component} from 'react'
 import './index.css'
 
 class TodoItem extends Component {
@@ -13,10 +13,8 @@ class TodoItem extends Component {
   }
 
   handleSave = () => {
-    // const {todoDetails} = this.props
-    // const {updatedTitle} = this.state
-    this.setState({editing: false})
     // Call a function to save updated title (not implemented in this code)
+    this.setState({editing: false})
   }
 
   handleChange = e => {
@@ -27,17 +25,20 @@ class TodoItem extends Component {
     const {todoDetails, deleteTodo, toggleComplete} = this.props
     const {editing, updatedTitle} = this.state
     return (
-      <li
-        className={todoDetails.completed ? 'todo-item completed' : 'todo-item'}
-      >
+      <li className={`todo-item ${todoDetails.completed ? 'completed' : ''}`}>
         {editing ? (
           <>
             <input
               type="text"
               value={updatedTitle}
               onChange={this.handleChange}
+              className="edit-input"
             />
-            <button onClick={this.handleSave} type="button">
+            <button
+              onClick={this.handleSave}
+              type="button"
+              className="save-btn"
+            >
               Save
             </button>
           </>
@@ -47,12 +48,21 @@ class TodoItem extends Component {
               type="checkbox"
               checked={todoDetails.completed}
               onChange={() => toggleComplete(todoDetails.id)}
+              className="checkbox"
             />
             <p className="title">{todoDetails.title}</p>
-            <button onClick={this.handleEdit} type="button">
+            <button
+              onClick={this.handleEdit}
+              type="button"
+              className="edit-btn"
+            >
               Edit
             </button>
-            <button onClick={() => deleteTodo(todoDetails.id)} type="button">
+            <button
+              onClick={() => deleteTodo(todoDetails.id)}
+              type="button"
+              className="delete-btn"
+            >
               Delete
             </button>
           </>
